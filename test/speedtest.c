@@ -1,5 +1,5 @@
-#define ECC_CURVE secp256r1
-#include "../ecc.h"
+//#define ECC_CURVE secp256r1
+#include "../inc/ecc.h"
 
 #include <stdio.h>
 #include <sys/time.h>

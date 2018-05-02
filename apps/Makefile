@@ -1,10 +1,10 @@
 default: makekeys
 all: default
 
-ecc.o: ../ecc.c ../ecc.h
-	gcc -g -o ecc.o -c ../ecc.c
+ecc.o: ../inc/ecc.c ../inc/ecc.h
+	gcc -g -o ecc.o -c ../inc/ecc.c
 
-makekeys.o: makekeys.c ../ecc.h
+makekeys.o: makekeys.c ../inc/ecc.h
 	gcc -I.. -g -o makekeys.o -c makekeys.c
 
 makekeys: ecc.o makekeys.o

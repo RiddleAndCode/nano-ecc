@@ -2,10 +2,10 @@ CFLAGS = -g -Wall -Werror
 
 all: speedtest verify_ecdh verify_ecdsa
 
-ecc.o: ../ecc.c ../ecc.h
-	$(CC) $(CFLAGS) -c -o ecc.o ../ecc.c
+ecc.o: ../inc/ecc.c ../inc/ecc.h
+	$(CC) $(CFLAGS) -c -o ecc.o ../inc/ecc.c
 
-%.o: %.c ../ecc.h
+%.o: %.c ../inc/ecc.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 speedtest: speedtest.o ecc.o

@@ -1,4 +1,4 @@
-#include "ecc.h"
+#include "../inc/ecc.h"
 
 #include <stdarg.h>
 

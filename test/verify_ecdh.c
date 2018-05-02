@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "../ecc.h"
+#include "../inc/ecc.h"
 #include "testlib.h"
 
 int test_vector(char *line) {

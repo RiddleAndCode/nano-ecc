@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "../ecc.h"
+#include "../inc/ecc.h"
 
 int test_vector(char *line);
 int random_mode(void);
