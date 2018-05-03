@@ -14,7 +14,7 @@ void printArray( char* name, uint8_t* array)
     printf("\n");
 }
 
-int api_ecc_make_key(char* pk_x, char* pk_y, char* p_privateKey, char* p_random)
+int api_ecc_make_key( char pk_x[32], char pk_y[32], char p_privateKey[32], char p_random[32])
 {
     EccPoint p = {0};
     printf("randomness: %s\n", (char*)p_random );
@@ -22,6 +22,7 @@ int api_ecc_make_key(char* pk_x, char* pk_y, char* p_privateKey, char* p_random)
     printf("x-value: %s\n", (char*)p.x );
     uint8_t priv[33] = {0};
     uint8_t rnd[33] = {0};
+
     memcpy( rnd, p_random, 32);
     printArray("priv", priv);
     printArray("rnd", rnd );

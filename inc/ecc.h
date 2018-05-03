@@ -31,7 +31,7 @@ with strange assembler messages.
 #define secp256r1 32
 #define secp384r1 48
 #ifndef ECC_CURVE
-    #define ECC_CURVE secp192r1
+    #define ECC_CURVE secp256r1
 #endif
 
 #if (ECC_CURVE != secp128r1 && ECC_CURVE != secp192r1 && ECC_CURVE != secp256r1 && ECC_CURVE != secp384r1)
