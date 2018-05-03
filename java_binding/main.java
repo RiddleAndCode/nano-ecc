@@ -1,18 +1,25 @@
- import java.util.StringTokenizer ;
  public class main {
    public static void main(String argv[]) {
-/*     String property = System.getProperty("java.library.path");
-     StringTokenizer parser = new StringTokenizer(property, ";");
-while (parser.hasMoreTokens()) {
-    System.err.println(parser.nextToken());
-    }
-    */
-     System.loadLibrary("nano_ecc");
-     //EccPoint point;
-/*     nano_iecc.ecc_make_key( )e
-     System.out.println(nano_ecc.getMy_variable());
-     System.out.println(nano_ecc.fact(5));
-     System.out.println(nano_ecc.get_time());
+     System.load("/c/dev/RaC/nano-ecc/java_binding/nano_ecc.so");
+
+     String x = "                                                              ";
+     String y = "                                                              ";
+     String priv = "                                                              ";
+     String rnd = "asdfpoaidsjfpoiajfökajsdfölhdsfksnbökhjbönbksbgmkjfdpoigÖFOKN";
+
+     nano_ecc.api_ecc_make_key( x,y,priv,rnd );
+     System.out.println( "java x =" + x );
+     System.out.println( "java y =" + y );
+     System.out.println( "java priv = " + priv );
+     // create public key
+    /* EccPoint pubKey = new EccPoint();
+     long rnd = 23094;
+     SWIGTYPE_p_uint8_t privKey = new SWIGTYPE_p_uint8_t();
+     SWIGTYPE_p_uint8_t rndNumber = new SWIGTYPE_p_uint8_t( rnd, true);
+
+     nano_ecc.ecc_make_key( pubKey, privKey, rndNumber);
+     System.out.println(pubKey.getX());  
+     System.out.println(pubKey.getY());  
      */
    }
  }
