@@ -15,6 +15,38 @@ extern "C" {
 JNIEXPORT jint JNICALL Java_nano_1ecc_api_1ecc_1make_1key
   (JNIEnv *, jclass, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
+/*
+ * Class:     nano_ecc
+ * Method:    ecc_valid_public_key
+ * Signature: ([B[B)I
+ */
+JNIEXPORT jint JNICALL Java_nano_1ecc_ecc_1valid_1public_1key
+  (JNIEnv *, jclass, jbyteArray, jbyteArray);
+
+/*
+ * Class:     nano_ecc
+ * Method:    ecdh_shared_secret
+ * Signature: ([B[B[B[B[B)I
+ */
+JNIEXPORT jint JNICALL Java_nano_1ecc_ecdh_1shared_1secret
+  (JNIEnv *, jclass, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+
+/*
+ * Class:     nano_ecc
+ * Method:    ecdsa_sign
+ * Signature: ([B[B[B[B[B)I
+ */
+JNIEXPORT jint JNICALL Java_nano_1ecc_ecdsa_1sign
+  (JNIEnv *, jclass, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+
+/*
+ * Class:     nano_ecc
+ * Method:    ecdsa_verify
+ * Signature: ([B[B[B[B[B)I
+ */
+JNIEXPORT jint JNICALL Java_nano_1ecc_ecdsa_1verify
+  (JNIEnv *, jclass, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+
 #ifdef __cplusplus
 }
 #endif
