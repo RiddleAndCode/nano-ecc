@@ -13,4 +13,4 @@ nano_ecc: nano_ecc.o ecc.o
 	$(LD) -shared -belf64-x86-64 -o nano_ecc.so nano_ecc.o ecc.o
 
 clean:
-	rm -f *.o *.class
+	rm -f *.o *.class *.so
