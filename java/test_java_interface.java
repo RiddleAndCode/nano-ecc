@@ -16,7 +16,7 @@ import java.nio.file.Path;
      Path currentRelativePath = Paths.get("");
      String thePath = currentRelativePath.toAbsolutePath().toString();
      //System.load("/c/dev/RaC/nano-ecc/java_binding2/nano_ecc.so");
-     System.load(thePath + "/nano_ecc.so");
+     System.load(thePath + "/libjnano_ecc.so");
 
      byte[] x = new byte[32];
      byte[] y = new byte[32];

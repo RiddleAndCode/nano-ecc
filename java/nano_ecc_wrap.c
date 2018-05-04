@@ -1,4 +1,4 @@
-#include "nano_ecc.h"
+#include "nano_ecc_wrap.h"
 #include <stdlib.h>
 #include <string.h>
 #include "../inc/ecc.h"
