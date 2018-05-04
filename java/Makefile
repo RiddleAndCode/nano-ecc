@@ -3,8 +3,8 @@ CC = gcc
 LD = ld
 all: nano_ecc
 
-ecc.o: ../inc/ecc.c ../inc/ecc.h
-	$(CC) $(CFLAGS) -c -o ecc.o ../inc/ecc.c
+ecc.o: ../src/ecc.c ../inc/ecc.h
+	$(CC) $(CFLAGS) -c -o ecc.o ../src/ecc.c
 
 *.o: *.c 
 	$(CC) -c $(CFLAGS) $< -o $@
