@@ -2,20 +2,20 @@ CFLAGS = -g -Wall -Werror
 
 all: speedtest verify_ecdh verify_ecdsa
 
-ecc.o: ../src/ecc.c ../inc/ecc.h
-	$(CC) $(CFLAGS) -c -o ecc.o ../src/ecc.c
-
 %.o: %.c ../inc/ecc.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-speedtest: speedtest.o ecc.o
-	$(CC) -o speedtest speedtest.o ecc.o
+speedtest: speedtest.o
+	mkdir -p ../bin
+	$(CC) -o ../bin/speedtest speedtest.o -L../lib -lnano_ecc
 
-verify_ecdh: verify_ecdh.o testlib.o ecc.o
-	$(CC) -o verify_ecdh verify_ecdh.o testlib.o ecc.o
+verify_ecdh: verify_ecdh.o testlib.o
+	mkdir -p ../bin
+	$(CC) -o ../bin/verify_ecdh verify_ecdh.o testlib.o -L../lib -lnano_ecc
 
-verify_ecdsa: verify_ecdsa.o testlib.o ecc.o
-	$(CC) -o verify_ecdsa verify_ecdsa.o testlib.o ecc.o
+verify_ecdsa: verify_ecdsa.o testlib.o 
+	mkdir -p ../bin
+	$(CC) -o ../bin/verify_ecdsa verify_ecdsa.o testlib.o -L../lib -lnano_ecc
 
 clean:
-	rm -f *.o speedtest verify_ecdh verify_ecdsa
+	rm -f *.o ../bin/speedtest ../bin/verify_ecdh ../bin/verify_ecdsa

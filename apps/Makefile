@@ -1,16 +1,14 @@
 default: makekeys
 all: default
 
-ecc.o: ../src/ecc.c ../inc/ecc.h
-	gcc -g -o ecc.o -c ../src/ecc.c
-
 makekeys.o: makekeys.c ../inc/ecc.h
 	gcc -I.. -g -o makekeys.o -c makekeys.c
 
-makekeys: ecc.o makekeys.o
-	gcc -o makekeys makekeys.o ecc.o
+makekeys: makekeys.o
+	mkdir -p ../bin
+	gcc -o ../bin/makekeys makekeys.o -L../lib -lnano_ecc
 
 clean:
-	rm -f ecc.o makekeys.o makekeys
+	rm -f ecc.o makekeys.o ../bin/makekeys
 
 .PHONY: default all clean
