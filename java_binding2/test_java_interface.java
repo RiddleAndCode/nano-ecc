@@ -3,14 +3,20 @@ import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
 import javax.xml.bind.DatatypeConverter;
+import java.nio.file.Paths;
+import java.nio.file.Path;
 
 
- public class main {
+ public class test_java_interface{
    private static void PrintArray( String name, byte[] _array ){
     System.out.println( name + " : " + DatatypeConverter.printHexBinary(_array));  
    }
    public static void main(String argv[]) {
-     System.load("/c/dev/RaC/nano-ecc/java_binding2/nano_ecc.so");
+
+     Path currentRelativePath = Paths.get("");
+     String thePath = currentRelativePath.toAbsolutePath().toString();
+     //System.load("/c/dev/RaC/nano-ecc/java_binding2/nano_ecc.so");
+     System.load(thePath + "/nano_ecc.so");
 
      byte[] x = new byte[32];
      byte[] y = new byte[32];

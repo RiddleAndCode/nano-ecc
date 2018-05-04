@@ -8,7 +8,7 @@ Features
 --------
 
  * simplified JAVA interface int nano_ecc.java
- * test case like main.java file
+ * simple workflow to test the interface in test_java_interface.java
  * Makefile to build the shared object to be used by java
 
 Usage Notes
@@ -18,7 +18,7 @@ Usage Notes
 
 Run
 
-make && java *.java && java main
+make && java *.java && java test_java_interface
 
  * to build the shared object to be used by the utilized JAVA JNI (make), 
  * to compile the java code
